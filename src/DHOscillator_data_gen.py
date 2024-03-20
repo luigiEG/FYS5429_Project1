@@ -2,7 +2,7 @@ import os
 import numpy as np
 from scipy.integrate import solve_ivp
 
-def damped_spring(t, Y):
+def dumped_spring(t, Y):
     """
     This function calculates the derivative of the state vector Y at time t
     for a spring-mass-damper system.
@@ -30,7 +30,7 @@ t_span = [0, 30]
 t_eval = np.linspace(t_span[0], t_span[1], 1000)
 
 # Solve the system of differential equations.
-sol = solve_ivp(damped_spring, t_span, Y0, t_eval=t_eval)
+sol = solve_ivp(dumped_spring, t_span, Y0, t_eval=t_eval)
 
 # To numpy array
 data = np.array([sol.t, sol.y[0], sol.y[1]]).T
